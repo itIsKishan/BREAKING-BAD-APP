@@ -35,25 +35,29 @@ const BreBadComponent = () =>{
         <div className='img-container'>
             <input type = 'search' id = 'searchCharacter' value = { search } placeholder='Search Character' onChange={ handleInputChange } />
 
-            {
-                filterCharacter.map((char) =>{
+            <div className='div-container'>
+                {
+                    filterCharacter.map((char) =>{
 
-                    return(
+                        return(
+                            <div className = 'container'>
 
-                        <div className = 'container'>
                                 <img src = { char.img } alt='character' />
-                            <div className = 'info'>
-                                <b>Actor Name : { char.portrayed } </b><br/>
-                                <b>Character Name : { char.name } </b><br/>
-                                <b>Nick Name : { char.nickname } </b><br/>
-                                <b>Appeared Episode : { char.appearance.join() } </b><br/>
-                                <b>Potrayed Role : { char.occupation.join()} </b><br/>
-                            </div>
-                        </div>
 
-                    )
-                })
-            }
+                                <div className = 'info'>
+                                    <b>Actor Name : { char.portrayed } </b><br/>
+                                    <b>Character Name : { char.name } </b><br/>
+                                    <b>Nick Name : { char.nickname } </b><br/>
+                                    <b>Appeared Episode : { char.appearance.join() } </b><br/>
+                                    <b>Potrayed Role : { char.occupation.join()} </b><br/>
+                                </div>
+                                
+                            </div>
+                        )
+                    })
+                }
+            </div>
+            
         </div>
     )
 }
